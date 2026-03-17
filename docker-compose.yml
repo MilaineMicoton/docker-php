@@ -1,13 +1,15 @@
+version: '3.8'
+
 services:
   php:
-    image:  php:8.2-apache
-    container_name:  php82
+    image: php:8.2-apache
+    container_name: php82
     ports:
-      -  8000:80
+      - 8000:80
     volumes:
-      -  ./php:/var/www/html
+      - ./php:/var/www/html
     build:
-      context:  .
+      context: .
       dockerfile:  Dockerfile
   db:
     image:  mysql:8.0
@@ -19,10 +21,10 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: pass
     ports:
-      -  3307:3306
+      - 3307:3306
   phpma:
     image: phpmyadmin/phpmyadmin
-    container_name:  phpmyadmin
+    container_name: phpmyadmin
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: db
@@ -30,6 +32,6 @@ services:
       PMA_PASSWORD: pass
       UPLOAD_LIMIT: 20M
     ports:
-      -  8899:80
+      - 8899:80
 
 

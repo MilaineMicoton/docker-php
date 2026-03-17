@@ -1,6 +1,6 @@
 <?php
 echo 'Bonjour de PHP';
-/*phpinfo();*/
+phpinfo();
 
 require_once 'connect.php';
 $sql = 'select * from `client`;';
